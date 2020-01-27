@@ -13,7 +13,7 @@ In this TP you will deal with
 
 Following instructions will help you init your first android project
 
-1. Install and run Android Studio 
+1. Install and run Android Studio
 2. Configure your development tool : 
     * If you use an Android device, turn it on developer mode
     * If not, you can configure an emulator on Android Studio
@@ -31,7 +31,7 @@ Following instructions will help you init your first android project
 
 Is **"Hello world!"** prompted on the screen ? Well you can keep on reading. 
 
-
+<img src="https://github.com/NicolasDuponchel/AndroidPracticalWork/blob/master/images/new_project.png" height="250"> <img src="https://github.com/NicolasDuponchel/AndroidPracticalWork/blob/master/images/new_project_activity_selection.png" height="250"> <img src="https://github.com/NicolasDuponchel/AndroidPracticalWork/blob/master/images/new_project_name_select.png" height="250">
 
 ## Instructions
 
