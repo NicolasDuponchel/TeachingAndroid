@@ -36,7 +36,7 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 ## Instructions
 
 
-#### 1- Replace wording **"Hello world!"** with **"Hello ESIEE"**
+### 1- Replace wording **"Hello world!"** with **"Hello ESIEE"**
 
 * Open `activity_main.xml` and change wording.
 * There is a warning on the string you just changed. Follow the warning instructions *(see TIP)*. 
@@ -46,7 +46,7 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 ***TIP***: Resolve a warning - put moose on warning and use **alt+Enter**
 
 
-#### 2- Add an image 
+### 2- Add an image 
 
 * In `activity_main.xml` add tag [<**ImageView**>](https://developer.android.com/reference/android/widget/ImageView)
 * Add dimensions to match parent width and match image content height (see [wrap_content & match_parent](https://developer.android.com/reference/android/view/ViewGroup.LayoutParams#xml-attributes_1))
@@ -60,7 +60,7 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 ***TIP 2***: [This](https://medium.com/@loutry/guide-to-constraintlayout-407cd87bc013) is a nice post about `ConstraintLayout` basics
 
 
-#### 3- Add a button 
+### 3- Add a button 
 
 * In `activity_main.xml` add tag [Button](https://developer.android.com/reference/android/widget/Button)
 * Add dimensions to wrap button content
@@ -69,7 +69,7 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 * Run app
 
 
-#### 4- Handle button click
+### 4- Handle button click
 
 Make your button add a `'E'` at the end of "Hello ESIEE" : 
 
@@ -81,12 +81,12 @@ Make your button add a `'E'` at the end of "Hello ESIEE" :
 ***TIP***: Add an id with `android:id="@+id/my_item_id"` 
  
 
-#### 5- Move button
+### 5- Move button
 
 * Use button item ids to place button just on top of the TextView
 
 
-#### 6- Create a List
+### 6- Create a List
 
 * In your Activity `onCreate` method, create a list of 5 names as a value
 * Sort this list by number of char in each name
@@ -99,7 +99,7 @@ Make your button add a `'E'` at the end of "Hello ESIEE" :
 ***TIP 2***: Print something in Logcat using `Log.d(...)` 
 
 
-#### 7- Use le List with the button
+### 7- Use le List with the button
 
 when clicking on **"try me"** button :
 * Pick a name randomly on the list
@@ -109,7 +109,7 @@ when clicking on **"try me"** button :
 ***TIP***: Search random method on List 
 
 
-#### 8- Modify the app icon
+### 8- Modify the app icon
 
 * Find and open `ic_launcher_foreground.xml`
 * Change Android robot color
@@ -122,7 +122,7 @@ when clicking on **"try me"** button :
 ***TIP 2***: Rotate - use tag `group` around a `path` and apply a `rotation`. Not working ? You can set a rotating point with `PivotX` and `PivotY`
  
 
-#### 9- Play with activity life cycle
+### 9- Play with activity life cycle
 * Override activity life cycle methods `onStart`, `onResume`, `onPause`, `onStop`, `onDestroy`.
 * Use it to print each activity life cycle event in Logcat
 * Run app
@@ -136,7 +136,6 @@ when clicking on **"try me"** button :
 
 Following instructions will help you push your android project to a GitHub repo
 
-#### 1- GitHub account
 * Create a GitHub account
 * Create new GitHub repository
 * Init your local git with `git init`  _(be shure to do it at app root path)_
