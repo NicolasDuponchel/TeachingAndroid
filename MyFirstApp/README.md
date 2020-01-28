@@ -106,7 +106,7 @@ when clicking on **"try me"** button :
 * Replace "Hello ESIEE" with this name
 * Run app
 
-***TIP***: Search random method on List 
+***TIP***: Search `random` method on List 
 
 
 ### 8- Modify the app icon
@@ -125,6 +125,7 @@ when clicking on **"try me"** button :
 ### 9- Play with activity life cycle
 * Override activity life cycle methods `onStart`, `onResume`, `onPause`, `onStop`, `onDestroy`.
 * Use it to print each activity life cycle event in Logcat
+* _Optional_  You can use a new `TextView` to print all events 
 * Run app
 * Try to rotate/quit/re-open/clean/etc. Does it match the [wanted beahavior](https://developer.android.com/guide/components/activities/activity-lifecycle#alc) ?   
 
@@ -139,10 +140,10 @@ Following instructions will help you push your android project to a GitHub repo
 * Create a GitHub account
 * Create new GitHub repository
 * Init your local git with `git init`  _(be shure to do it at app root path)_
-* Link your GitHub repo with `git remote add origin _your_repository_url_`
+* Link your GitHub repo with `git remote add origin your_repository_url`
 * Save your changes in a commit 
     * `git add .` to add everything
-    * `git commit -m "_your_commit_message_"` to create commit
+    * `git commit -m "your_commit_message"` to create commit
 * Set credential helper with `git config --global credential.helper foo`
 * Upstream your commit to GitHub repo with  `git push -u origin master`
 
@@ -157,9 +158,9 @@ git push -u origin master
 
 ***TIP 1***: You can add by files with `git add _file_path_`
 
-***TIP 2***: You can add by hunks _(parts of code changes)_ with `git add -p`
+***TIP 2***: You can add by hunks _(=parts of code changes)_ with `git add -p`
 
-***TIP 3***: You can add and commit everything with single command `git commit -a`
+***TIP 3***: You can add and commit everything with single command `git commit -a -m "commit_message"`
 
 ## Android Studio global tips
 
