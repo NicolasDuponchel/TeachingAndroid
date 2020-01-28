@@ -40,6 +40,7 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 
 * Open `activity_main.xml` and change wording.
 * There is a warning on the string you just changed. Follow the warning instructions *(see TIP)*. 
+* Open `res/values/string.xml`. Check that your new string res is well created.  
 * Run the app 
 
 ***TIP***: Resolve a warning - put moose on warning and use **alt+Enter**
@@ -48,7 +49,7 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 #### 2- Add an image 
 
 * In `activity_main.xml` add tag [<**ImageView**>](https://developer.android.com/reference/android/widget/ImageView)
-* Add dimensions to match parent's width and match image content height (see [wrap_content & match_parent](https://developer.android.com/reference/android/view/ViewGroup.LayoutParams#xml-attributes_1))
+* Add dimensions to match parent width and match image content height (see [wrap_content & match_parent](https://developer.android.com/reference/android/view/ViewGroup.LayoutParams#xml-attributes_1))
 * Add constraints to place it on bottom of screen (follow TextView's example)
 * Download [ESIEE logo](https://www.esiee.fr/sites/all/themes/custom/esiee_theme/logo.png) and rename it to `esiee_logo.png`
 * Copy you logo to `app/src/main/res/drawable` 
@@ -64,13 +65,13 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 * In `activity_main.xml` add tag [Button](https://developer.android.com/reference/android/widget/Button)
 * Add dimensions to wrap button content
 * Add constraints to place it on top of screen
-* Add following text on button : "try me !"
+* Add following text on button : `"try me !"`
 * Run app
 
 
 #### 4- Handle button click
 
-Make your button add a 'E' at the end of "Hello ESIEE" : 
+Make your button add a `'E'` at the end of "Hello ESIEE" : 
 
 * Add an id to your button in `activity_main.xml` 
 * Import your ids in the acitivity with `import kotlinx.android.synthetic.main.activity_main.*`
@@ -87,13 +88,15 @@ Make your button add a 'E' at the end of "Hello ESIEE" :
 
 #### 6- Create a List
 
-* Create a list of 5 names as a value
+* In your Activity `onCreate` method, create a list of 5 names as a value
 * Sort this list by number of char in each name
 * Print this list in the Logcat when the app starts
 * Print this list in a new TextView on top of your button 
 * Run app
 
-***TIP***: Print something using `Log.d(...)` 
+***TIP 1***: Have a look at [`sorted()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sorted.html). Not enought ? check [`sortedBy{...}`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sorted-by.html)
+
+***TIP 2***: Print something in Logcat using `Log.d(...)` 
 
 
 #### 7- Use le List with the button
@@ -107,14 +110,16 @@ when clicking on **"try me"** button :
 
 
 #### 8- Modify the app icon
+
 * Find and open `ic_launcher_foreground.xml`
-* Change Android robot's color
+* Change Android robot color
+* Change Android robot outline color 
 * Flip Android robot to 180° 
 * Run app
 
-***TIP 1***: rotate - use tag group around a path and apply a rotation
+***TIP 1***: All attributes you'll need are documented [here](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable)
 
-***TIP 2***: set a rotating point with PivotX and PivotY
+***TIP 2***: Rotate - use tag `group` around a `path` and apply a `rotation`. Not working ? You can set a rotating point with `PivotX` and `PivotY`
  
 
 #### 9- Play with activity life cycle
