@@ -162,11 +162,18 @@ git push -u origin master
 
 ***TIP 3***: You can add and commit everything with single command `git commit -a -m "commit_message"`
 
+
 ## Android Studio global tips
 
 * **cmd + alt + l** → reformat and rearange code + clean imports
 * **alt + enter** on a warning → resolve it 
 
+
+## Get further
+
+If you still don't have enought with previous instructions you can try to match following UI
+
+<img src="images/wonderfull_UI.png" height="270"> 
 
 
 ## Conclusion
