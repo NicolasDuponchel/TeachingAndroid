@@ -1,21 +1,39 @@
 # Teaching Android
 
-Author [Nicolas Duponchel](https://www.linkedin.com/in/nicolasduponchel/)
+Author [Nicolas Duponchel](NDU)
 
 ## Lessons
 
-* Android introduction [:books:](https://docs.google.com/presentation/d/1TVzxBw-y4QQULLn9568-vNTC4tJforGU9vho4i7TkLU/edit?usp=sharing)
-* Kotlin lesson [:books:](https://docs.google.com/presentation/d/1vIhzxcxw_Ynpv_1_RDHXJnkakLSO3jwyujhe-djDK7c/edit?usp=sharing)
-* Git lesson [:books:](https://docs.google.com/presentation/d/1vNHc-OM-ku6p8CZt05iB3ILp0-84-GVwm-l-peiNPdc/edit?usp=sharing)
-* Android lesson :books: **WIP**
+* [:books:][Lesson1] Android introduction
+* [:books:][Lesson2] Kotlin lesson
+* [:books:][Lesson3] Git lesson
+* [:books:][Lesson4] Android lesson **WIP**
 
 
 ## Useful links
 
-* Android developer [:book:](https://developer.android.com/guide/components/fundamentals)
-* Git official Doc [:book:](https://git-scm.com/docs) 
+* [:book:][Useful1] Android developer
+* [:book:][Useful2] Git official Doc
 
 
 ## Training
 
-* Build your first app [:hammer:](MyFirstApp)
+* [:hammer:][Training1] Build your first app
+
+
+
+
+[//]: # (Lessons links)
+[Lesson1]: https://docs.google.com/presentation/d/1TVzxBw-y4QQULLn9568-vNTC4tJforGU9vho4i7TkLU/edit?usp=sharing
+[Lesson2]: https://docs.google.com/presentation/d/1vIhzxcxw_Ynpv_1_RDHXJnkakLSO3jwyujhe-djDK7c/edit?usp=sharing
+[Lesson3]: https://docs.google.com/presentation/d/1vNHc-OM-ku6p8CZt05iB3ILp0-84-GVwm-l-peiNPdc/edit?usp=sharing
+[Lesson4]: https://docs.google.com/presentation/d/1D0FXnJPRdrTBbfM7dYjHtwRVWsAk8oLF7SDVKE1F5_E/edit?usp=sharing
+
+[//]: # (Useful links)
+[Useful1]: https://developer.android.com/guide/components/fundamentals
+[Useful2]: https://git-scm.com/docs
+
+[//]: # (Training links)
+[Training1]: MyFirstApp
+
+[NDU]: https://www.linkedin.com/in/nicolasduponchel/
