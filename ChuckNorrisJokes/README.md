@@ -100,8 +100,39 @@ You're now able to create your custom `RecyclerView`, using a custom adapter and
 
 ----------------------------------------------------------------------
 
-### ... Work in progress ... 
-### :hammer_and_pick: :hammer_and_pick:   :hammer_and_pick:  :hammer_and_pick:  :hammer_and_pick:  :hammer_and_pick:  :hammer_and_pick:  :hammer_and_pick: 
+## 2- Fetch jokes
+
+#### 1. Create the data model matching the api
+```json
+{
+    "icon_url" : "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+    "id" : "kvbADxuyS36ug4MJ7KMBMA",
+    "url" : "https://api.chucknorris.io/jokes/kvbADxuyS36ug4MJ7KMBMA",
+    "value" : "Chuck Norris puts mustard gas on his hotdogs."
+}
+```
+#### 2. Make it serializable with KoltinX serialization
+#### 3. Import RX and Retrofit using gradle
+#### 4. Create the Factory 
+#### 5. Make the call for one joke with Single
+#### 6. Add a loader
+#### 7. Make the call for multiple jokes with Observable
+
+## 3- Display jokes in list
+
+#### 1. Update the RecyclerView dynamically with fetched jokes
+#### 2. Use the pull to refresh to fetch new jokes
+
+## 4- Manage screen rotation
+
+#### 1. Create a custom layout-land for landscape
+#### 2. Use save instance state to save state
+#### 3. Introduction to MVVM and livedata
+
+## 5- Send your best joke to friends
+
+#### 1. Update your custom view to handle event
+#### 2. Use this event to send a joke as a sms to a friend
 
 
 [//]: # (links)
