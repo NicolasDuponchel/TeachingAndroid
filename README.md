@@ -19,6 +19,7 @@ Author [Nicolas Duponchel](NDU)
 ## Training
 
 * [:hammer:][Training1] Build your first app
+* [:hammer:][Training2] Have fun with Chuck Norris
 
 
 
@@ -35,5 +36,6 @@ Author [Nicolas Duponchel](NDU)
 
 [//]: # (Training links)
 [Training1]: MyFirstApp
+[Training2]: ChuckNorrisJokes
 
 [NDU]: https://www.linkedin.com/in/nicolasduponchel/
