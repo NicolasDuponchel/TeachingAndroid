@@ -1,6 +1,6 @@
 # Teaching Android
 
-Author [Nicolas Duponchel](NDU)
+Author [Nicolas Duponchel](NDU) [@][NDU_mail]
 
 ## Lessons
 
@@ -39,3 +39,4 @@ Author [Nicolas Duponchel](NDU)
 [Training2]: ChuckNorrisJokes
 
 [NDU]: https://www.linkedin.com/in/nicolasduponchel/
+[NDU_mail]: mailto:nduponchel@gopro.com
