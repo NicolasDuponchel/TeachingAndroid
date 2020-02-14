@@ -1,3 +1,4 @@
+
 # Chuck Norris Joke App
 
 <p align="center" href="https://api.chucknorris.io/">
@@ -13,6 +14,15 @@ Build an app to display some Chuck Norris jokes. In these TP you will deal with
 * asynchronous code
 * activity instance state
 * data share with other apps
+
+
+## Steps
+
+1. [UI List component](#part1)
+2. [Fetch jokes using API](#part2)
+3. [Display jokes on screen](#part3)
+4. [TODO](#part4)
+
 
 
 ## Instructions
@@ -34,7 +44,13 @@ A.  Create a Joke class
 B.  Create a list of jokes
 ```
 
-## Part 1 - Create a UI List component
+
+<p align="center" href="https://api.chucknorris.io/">
+    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
+<p/>
+
+
+## Part 1 - Create a UI List component <a name="part1"/>
 The main useful android component to display lists is [RecyclerView]. This part goal is to build a simple `RecyclerView`. Create a new Android Studio project with an empty activity.
 
 
@@ -99,9 +115,13 @@ This looks pretty cool isn't it ? But I'm sure you're not yet fully satisfied. W
 #### 5. Conclusion
 You're now able to create your custom `RecyclerView`, using a custom adapter and custom layout resources. Don't forget to save your work.
 
-----------------------------------------------------------------------
 
-## 2- Fetch jokes
+<p align="center" href="https://api.chucknorris.io/">
+    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
+<p/>
+
+
+## Part 2 - Fetch jokes <a name="part2"/>
 This part goal is to get jokes from Chuck Norris web API. 
 
 #### 1. Create the data model matching the API
@@ -229,8 +249,26 @@ Now that we laid the foundations, let's play with it.
 >}
 >```
 
+#### 5. Leaks kill
+At this point we subscribed to a `Single` observable, but we do never unsubscribe to it, which is a bad thing because it creates leaks. Android Studio should be warning: *"The result of subscribeBy is not used"*.
 
-## 3- Display jokes on screen
+* Add a member field of type `CompositeDisposable` to your activity.
+
+* Add the result of your subscription to your `CompositeDisposable` instance.
+
+* You need to clear your composite, but when ? 
+
+
+#### 6. Conclusion
+You're now able to use the Chuck REST API to get a random joke with your android device.  
+
+
+<p align="center" href="https://api.chucknorris.io/">
+    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
+<p/>
+
+
+## Part 3 - Display jokes on screen
 Goal now: add a `Joke` we get from the web inside our `RecyclerView`.
 
 #### 1. Display a single Joke
@@ -246,7 +284,7 @@ Goal now: add a `Joke` we get from the web inside our `RecyclerView`.
 * Add a button on your screen and make it add a new `Joke` to your list on each click.  
 
 #### 2. Add a loader
-What we need now is to tell the user he needs to wait while his Joke is being downloaded. To do so we’ll use a loader.
+What we need now is to tell the user he needs to wait while his Joke is being downloaded. To do so we’ll use a `ProgressBar`.
 
 * Add a `ProgressBar` to your layout. By default you want this loader not to be visible on screen. 
 
@@ -261,23 +299,58 @@ What we need now is to tell the user he needs to wait while his Joke is being do
 > :mag: *The call to random joke API will probably be very quick for a single Joke, and the loader may not have time to appear on screen. Take a look at method `Observable.delay()`, It could be helpful for testing.* 
 
 #### 3. Make the call for multiple jokes with Observable
-TODO : Add a description here
+Of course we won't get stuck here with a stupid single joke. Don't you want some more funny stories ? 
 
 * Change your `Single` emission of `Joke` into an `Observable` which emits a set of 10 `Jokes` one after the other. 
 
-> :mag: *What you would like to do here is to `repeat` n times the single emission of a `Joke`* 
+> :mag: *What you would like to do here is to **`repeat`** n times the single emission of a `Joke`* 
+
+> :mag: *Remember a `Single` is a particular case of an `Observable`. It emits result in `onSuccess` whereas an `Observable` emits each result in `onNext`, then `onComplete` when it's done.*
+
+
+#### 4. Reload new jokes 
+The goal here is to dynamically reload new jokes when we are done with previous one. In this part, we will reload new set of jokes when we scroll to the last jokes displayed.
+
+* Remove your dummy button.
+
+* Add a callback `onBottomReached` to your adapter. This callback should be :
+    * a class member value
+    * passed as param in the adapter constructor
+    * a lambda function*
+    
+> :mag: *Have a look at kotlin [function types documentation][kotlinFunctionTypeDoc] to learn more about how to pass function as param. For further reading, [here][kotlinFunctionArticle] is a well written article on Kotlin functions features.*
+
+* Make your Activity code compile : complete your Adapter instantiation with missing param. What do you want to do on your list bottom reached ? 
+
+* In your Adapter, you need to call `onBottomReached()` when you scrolled to the bottom of your list. There might be different ways to achieve this. Be creative ! 
+
+
+TODO : compositeDisposable
+
+TODO : if jokes.size >= 10 
+
+TODO : https://stackoverflow.com/questions/36127734/detect-when-recyclerview-reaches-the-bottom-most-position-while-scrolling
+
+#### 5. Conclusion
+Here we are ! You built a simple single screen app displaying Chuck Norris jokes.
+
+
+<p align="center" href="https://api.chucknorris.io/">
+    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
+<p/>
 
 #### 1. Update the RecyclerView dynamically with fetched jokes
 #### 2. Upgrade UI to make it more JOLI
-#### 3. Use the pull to refresh to fetch new jokes
+#### 3. Reload 10 new jokes when you arrive on bottom of RV
+#### 4. Use the pull to refresh to fetch new jokes
 
-## 4- Manage screen rotation
+## Part 4 - Manage screen rotation
 
 #### 1. Create a custom layout-land for landscape
 #### 2. Use save instance state to save state
 #### 3. Introduction to MVVM and livedata
 
-## 5- Send your best joke to friends
+## Part 5 - Send your best joke to friends
 
 #### 1. Update your custom view to handle event
 #### 2. Use this event to send a joke as a sms to a friend
@@ -308,3 +381,5 @@ TODO : Add a description here
 [RetrofitError]: https://stackoverflow.com/a/59448917/10030894
 [threadingArticle]: https://proandroiddev.com/understanding-rxjava-subscribeon-and-observeon-744b0c6a41ea
 [viewVisibility]: https://developer.android.com/reference/android/view/View.html#setVisibility(int)
+[kotlinFunctionTypeDoc]: https://kotlinlang.org/docs/reference/lambdas.html#function-types
+[kotlinFunctionArticle]: https://blog.kotlin-academy.com/kotlin-programmer-dictionary-function-type-vs-function-literal-vs-lambda-expression-vs-anonymous-edc97e8873e
