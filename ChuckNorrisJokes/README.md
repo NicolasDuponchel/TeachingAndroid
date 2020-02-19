@@ -154,7 +154,7 @@ First of all, this json file needs to be changed into kotlin class so that we ca
 
 > :mag: *Kotlinx Serialization [annotations][kotlinSerialAnnotation]*
 
-* Use `JokeSerializationTest.kt` to be sure everything is correct. You can download file and past it in `test` folder (same level that `main`). Note that you shouldn't edit this file content, just *Run Test*.
+* Use [`JokeSerializationTest.kt`][testFile] to be sure everything is correct. You can download file and past it in `test` folder (same level that `main`). Note that you shouldn't edit this file content, just *Run Test*.
 
 * Replace all `String` used in previous part with `Joke` object: `JokeAdapter` should not contain a `List<String>` anymore but a `List<Joke>`. 
 
@@ -339,6 +339,7 @@ Here we are ! You built a simple single screen app displaying Chuck Norris jokes
 
 
 [//]: # (links)
+[testFile]: JokeSerializationTest.kt
 [chuckApi]: https://api.chucknorris.io/
 [RecyclerView]: https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView
 [TextView]: https://developer.android.com/reference/kotlin/android/widget/TextView
