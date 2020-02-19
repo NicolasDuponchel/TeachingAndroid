@@ -21,7 +21,6 @@ Build an app to display some Chuck Norris jokes. In these TP you will deal with
 1. [UI List component](#part1)
 2. [Fetch jokes using API](#part2)
 3. [Display jokes on screen](#part3)
-4. [TODO](#part4)
 
 
 
@@ -268,7 +267,7 @@ You're now able to use the Chuck REST API to get a random joke with your android
 <p/>
 
 
-## Part 3 - Display jokes on screen
+## Part 3 - Display jokes on screen <a name="part3"/>
 Goal now: add a `Joke` we get from the web inside our `RecyclerView`.
 
 #### 1. Display a single Joke
@@ -322,14 +321,7 @@ The goal here is to dynamically reload new jokes when we are done with previous 
 
 * Make your Activity code compile : complete your Adapter instantiation with missing param. What do you want to do on your list bottom reached ? 
 
-* In your Adapter, you need to call `onBottomReached()` when you scrolled to the bottom of your list. There might be different ways to achieve this. Be creative ! 
-
-
-TODO : compositeDisposable
-
-TODO : if jokes.size >= 10 
-
-TODO : https://stackoverflow.com/questions/36127734/detect-when-recyclerview-reaches-the-bottom-most-position-while-scrolling
+* In your Adapter, you need to call `onBottomReached()` when you scroll to the bottom of your list. There might be different ways to achieve this. Be creative !
 
 #### 5. Conclusion
 Here we are ! You built a simple single screen app displaying Chuck Norris jokes.
@@ -338,22 +330,6 @@ Here we are ! You built a simple single screen app displaying Chuck Norris jokes
 <p align="center" href="https://api.chucknorris.io/">
     <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
 <p/>
-
-#### 1. Update the RecyclerView dynamically with fetched jokes
-#### 2. Upgrade UI to make it more JOLI
-#### 3. Reload 10 new jokes when you arrive on bottom of RV
-#### 4. Use the pull to refresh to fetch new jokes
-
-## Part 4 - Manage screen rotation
-
-#### 1. Create a custom layout-land for landscape
-#### 2. Use save instance state to save state
-#### 3. Introduction to MVVM and livedata
-
-## Part 5 - Send your best joke to friends
-
-#### 1. Update your custom view to handle event
-#### 2. Use this event to send a joke as a sms to a friend
 
 
 
