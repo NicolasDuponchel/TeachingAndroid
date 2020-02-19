@@ -7,7 +7,7 @@ Author [Nicolas Duponchel](NDU) [@][NDU_mail]
 * [:books:][Lesson1] Android introduction
 * [:books:][Lesson2] Kotlin lesson
 * [:books:][Lesson3] Git lesson
-* [:books:][Lesson4] Android lesson **WIP**
+* [:books:][Lesson4] Android lesson
 
 
 ## Useful links
