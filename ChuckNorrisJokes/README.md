@@ -159,7 +159,7 @@ First of all, this json file needs to be changed into kotlin class so that we ca
  
  
 #### 2. Import Retrofit & Rx Java
-[Retrofit][https://square.github.io/retrofit/] is a type-safe HTTP client for Android and Java. We'll use it to request Chuck API. There are multiple ways to achieve async operations on Android. We'll use [Rx][http://reactivex.io/], which is known to be a combination of the best ideas from the **Observer** pattern, the **Iterator** pattern, and **functional programming** 
+[Retrofit][RetrofitSite] is a type-safe HTTP client for Android and Java. We'll use it to request Chuck API. There are multiple ways to achieve async operations on Android. We'll use [Rx][reactiveX], which is known to be a combination of the best ideas from the **Observer** pattern, the **Iterator** pattern, and **functional programming** 
 
 * Import [Retrofit] last version -  `com.squareup.retrofit2:retrofit:x.y.z`
 
@@ -341,10 +341,12 @@ Here we are ! You built a simple single screen app displaying Chuck Norris jokes
 [kotlinSerialPlugin]: https://github.com/Kotlin/kotlinx.serialization#using-apply-plugin-the-old-way
 [kotlinSerialLib]: https://github.com/Kotlin/kotlinx.serialization#dependency-on-the-runtime-library
 [kotlinSerialAnnotation]: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/examples.md#annotations
+[reactiveX]: http://reactivex.io/
 [RxAdapter]: https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2
 [RxConverter]: https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
 [RxSingle]: http://reactivex.io/documentation/single.html
 [Retrofit]: https://github.com/square/retrofit 
+[RetrofitSite]: https://square.github.io/retrofit/
 [RetrofitUsage]: https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2#usage 
 [RetrofitError]: https://stackoverflow.com/a/59448917/10030894
 [threadingArticle]: https://proandroiddev.com/understanding-rxjava-subscribeon-and-observeon-744b0c6a41ea
