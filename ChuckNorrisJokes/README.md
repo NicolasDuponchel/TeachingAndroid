@@ -44,7 +44,7 @@ B.  Create a list of jokes
 ```
 
 
-<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="100"><p/>
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
 
 
 ## Part 1 - Create a UI List component <a name="part1"/>
@@ -113,9 +113,7 @@ This looks pretty cool isn't it ? But I'm sure you're not yet fully satisfied. W
 You're now able to create your custom `RecyclerView`, using a custom adapter and custom layout resources. Don't forget to save your work.
 
 
-<p align="center" href="https://api.chucknorris.io/">
-    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
-<p/>
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
 
 
 ## Part 2 - Fetch jokes <a name="part2"/>
@@ -257,7 +255,7 @@ At this point we subscribed to a `Single` observable, but we do never unsubscrib
 You're now able to use the Chuck REST API to get a random joke with your android device.  
 
 
-<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="100"><p/>
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
 
 
 ## Part 3 - Display jokes on screen <a name="part3"/>
@@ -320,7 +318,7 @@ The goal here is to dynamically reload new jokes when we are done with previous 
 Here we are ! You built a simple single screen app displaying Chuck Norris jokes.
 
 
-<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="100"><p/>
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
 
 
 
