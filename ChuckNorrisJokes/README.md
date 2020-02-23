@@ -44,9 +44,7 @@ B.  Create a list of jokes
 ```
 
 
-<p align="center" href="https://api.chucknorris.io/">
-    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
-<p/>
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="100"><p/>
 
 
 ## Part 1 - Create a UI List component <a name="part1"/>
@@ -141,10 +139,7 @@ Here is the returned json :
 First of all, this json file needs to be changed into kotlin class so that we can use it in the app. [Kotlinx Serilaization][kotlinSerial] will help us achieve this *conversion*. 
 
 
-* Import `Kotlinx.serialization` lib into your app. You will need to import both [plugin][kotlinSerialPlugin] and [runtime library][kotlinSerialLib]. Prefer usage of groovy for now. 
-
-> :mag: *To import with Gradle, keep it simple and prefer using Groovy DSL.*
-
+* Import `Kotlinx.serialization` lib into your app. You will need to import both [plugin][kotlinSerialPlugin] and [runtime library][kotlinSerialLib]. Prefer usage of groovy DSL for now.
 
 * Once you're done with imports, create a class `Joke` matching json format and tag it as `Serializable`. 
 
@@ -164,7 +159,7 @@ First of all, this json file needs to be changed into kotlin class so that we ca
  
  
 #### 2. Import Retrofit & Rx Java
-blablablba. RX - Retrofit
+[Retrofit][https://square.github.io/retrofit/] is a type-safe HTTP client for Android and Java. We'll use it to request Chuck API. There are multiple ways to achieve async operations on Android. We'll use [Rx][http://reactivex.io/], which is known to be a combination of the best ideas from the **Observer** pattern, the **Iterator** pattern, and **functional programming** 
 
 * Import [Retrofit] last version -  `com.squareup.retrofit2:retrofit:x.y.z`
 
@@ -229,7 +224,7 @@ Now that we laid the foundations, let's play with it.
 >        ): Disposable
 >```
 
-> :mag: *Lambda argument example : `onSuccess = { joke -> TODO("Tell all your $joke the world") }`*
+> :mag: *Lambda argument example : `onSuccess = { joke -> TODO("Tell your $joke to the world") }`*
 
 * If you test your code at this step you'll get a `NetworkOnMainThreadException`. Web call are asynchronous and require not to be executed on the **MainThread**. What you need to do is to force the subscription of your Single on a different Thread. Android most common thread to execute network call is `Schedulers.io()`. 
 
@@ -237,7 +232,7 @@ Now that we laid the foundations, let's play with it.
 
 * You are now ready to Log your first Joke in Logcat. Run the app and read your joke.
 
-> :warning: Retrofit2 requires at minimum Java 8+. For some reasons your code might crash with [`NoSuchMethodError: No static method metafactory`][https://stackoverflow.com/a/59448917/10030894]. You can fix it by switching Java8 compatibility, add following code to your Gradle :
+> :warning: Retrofit2 requires at minimum Java 8+. For some reasons your code might crash with [`NoSuchMethodError: No static method metafactory`][RetrofitError]. You can fix it by switching Java8 compatibility, add following code to your Gradle :
 >```groovy
 > android {
 >    ...
@@ -248,7 +243,7 @@ Now that we laid the foundations, let's play with it.
 >}
 >```
 
-#### 5. Leaks kill
+#### 5. Leaks killer
 At this point we subscribed to a `Single` observable, but we do never unsubscribe to it, which is a bad thing because it creates leaks. Android Studio should be warning: *"The result of subscribeBy is not used"*.
 
 * Add a member field of type `CompositeDisposable` to your activity.
@@ -262,9 +257,7 @@ At this point we subscribed to a `Single` observable, but we do never unsubscrib
 You're now able to use the Chuck REST API to get a random joke with your android device.  
 
 
-<p align="center" href="https://api.chucknorris.io/">
-    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
-<p/>
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="100"><p/>
 
 
 ## Part 3 - Display jokes on screen <a name="part3"/>
@@ -315,7 +308,7 @@ The goal here is to dynamically reload new jokes when we are done with previous 
 * Add a callback `onBottomReached` to your adapter. This callback should be :
     * a class member value
     * passed as param in the adapter constructor
-    * a lambda function*
+    * a lambda function
     
 > :mag: *Have a look at kotlin [function types documentation][kotlinFunctionTypeDoc] to learn more about how to pass function as param. For further reading, [here][kotlinFunctionArticle] is a well written article on Kotlin functions features.*
 
@@ -327,9 +320,7 @@ The goal here is to dynamically reload new jokes when we are done with previous 
 Here we are ! You built a simple single screen app displaying Chuck Norris jokes.
 
 
-<p align="center" href="https://api.chucknorris.io/">
-    <img src="https://cdn0.iconfinder.com/data/icons/user-interface-255/100/more-512.png" height="100">
-<p/>
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="100"><p/>
 
 
 
