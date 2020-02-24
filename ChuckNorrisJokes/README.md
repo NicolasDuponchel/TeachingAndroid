@@ -21,6 +21,7 @@ Build an app to display some Chuck Norris jokes. In these TP you will deal with
 1. [UI List component](#part1)
 2. [Fetch jokes using API](#part2)
 3. [Display jokes on screen](#part3)
+4. [User Interface](#part4)
 
 
 
@@ -323,6 +324,73 @@ Here we are ! You built a simple single screen app displaying Chuck Norris jokes
 <p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
 
 
+## Part 4 - Make UI great again <a name="part4"/>
+This part is the last one we need before telling our app is ready to be used. Goal is to improve the user interface and add some UI features.
+
+
+#### 1. Manage screen rotation
+If you try to turn your device to landscape, you'll see that your app is reloading new jokes. This is due to Android Activity life cycle which destroys and rebuilds the View. We need to [save and restore UI states][SavingUiStates], it can be achieved different ways.
+
+* Use methods `onSavedInstanceState()` and `onCreate()` to save and restore your list of jokes. Your list needs to be serialized and saved as `String` in `Bundle`.
+
+> :mag: Brief remember about Activity life cycle [`onCreate()`][lifeCycleOnCreate].
+
+> :mag: You can serialize a `List<Obj>` using a `SerializationStrategy<Obj>` -> `Obj.serializer().list`.
+
+* Take care not to reload new jokes if you restore previously saved list.
+
+
+#### 2. Custom Joke View 
+We will need to interact with our joke View items. That's why we need a custom view here.
+
+* Create a class `JokeView.kt`. Your custom view should :
+    * extends `ConstraintLayout`
+        > :mag: *In Java, custom views have 3 constructors called in chain with different params. In kotlin you should use `@JvmOverloads` constructor*
+        
+    * inflate an *.xml* layout file. You can keep and improve your previous `joke_layout.xml`
+        > :mag: *Your `joke_layout.xml` is not a `TextView` anymore. Have a look at [`<merge...>`][mergeTag]. Then precise what type of parent the layout will be merged in with `tools:parentTag`*
+        
+    * contain a data class `Model` matching all view components
+    
+    * contain a method `setupView(model: Model)` which update the view with model values.
+        > :warning: *Only this method should be able to update the view.*
+
+    * match (at least or better) following UI result :
+      <p align="center"><img src="images/JokeView.png" width="300"><p/>
+      <p align="center"><img src="images/JokeViewBluePrint.png" width="300"><p/>
+      
+        > :mag: *No need to search icons on the web, use Asset Studio to find some : **cmd+n in Drawables --> Vector Asset --> Clip Art***
+    
+    
+* Share button click should: Log the `id` of selected joke **from your activity**.
+    > :mag: *How do you callback the event to your activity ?*
+    
+* Save button click should: Log the `id` of selected joke **from your activity** & change your icon as checked. 
+    > :mag: *How does your view know if the joke is stared or not?*
+
+
+* Create a class which extends `ItemTouchHelper` to 
+    * delete jokes in list using `onSwiped()`
+    * reorder items in list using `onMoved()`
+    > :mag: *You can download and add [`JokeTouchHelper.kt`][JokeTouchHelper] to your project. Of course, this file needs to be completed... :innocent:* 
+
+
+#### 1. Save favorite jokes
+
+
+WIP _ TODO 
+Lesson demo live --> create a custom view
+
+WIP _ TODO :
+- Save selected joke in shared prefs
+- when starting app, add saved joke to list then load other jokes
+
+#### 1. Share a selected joke
+
+TODO : Fix indentation for all *mag*
+
+
+<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
 
 
 
@@ -353,3 +421,9 @@ Here we are ! You built a simple single screen app displaying Chuck Norris jokes
 [viewVisibility]: https://developer.android.com/reference/android/view/View.html#setVisibility(int)
 [kotlinFunctionTypeDoc]: https://kotlinlang.org/docs/reference/lambdas.html#function-types
 [kotlinFunctionArticle]: https://blog.kotlin-academy.com/kotlin-programmer-dictionary-function-type-vs-function-literal-vs-lambda-expression-vs-anonymous-edc97e8873e
+[SavingUiStates]: https://developer.android.com/topic/libraries/architecture/saving-states 
+[lifeCycleOnCreate]: https://developer.android.com/guide/components/activities/activity-lifecycle#oncreate
+[mergeTag]: https://developer.android.com/training/improving-layouts/reusing-layouts#Merge
+[ItemTouchHelper]: https://developer.android.com/reference/androidx/recyclerview/widget/ItemTouchHelper?hl=en
+[SharedPref]: https://developer.android.com/reference/android/content/SharedPreferences
+[JokeTouchHelper]: JokeTouchHelper.kt
