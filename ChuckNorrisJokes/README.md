@@ -65,9 +65,9 @@ A `RecyclerView` is an optimized and flexible view for providing a limited windo
 
 * Add `androidx.recyclerview:recyclerview` to your dependencies in module file `build.gradle (app)` to import `RecyclerView` package.
 
-> :mag: *Last `RecyclerView` version can be found [here][recyclerViewVersion].*
->
-> :mag: *Learn more about gradle [`implementation`][implementation] config.*
+    > :mag: *Last `RecyclerView` version can be found [here][recyclerViewVersion].*
+    >
+    > :mag: *Learn more about gradle [`implementation`][implementation] config.*
 
 * Add a new `RecyclerView` in you main layout and bind it in your main activity.
 
@@ -101,13 +101,13 @@ This looks pretty cool isn't it ? But I'm sure you're not yet fully satisfied. W
 
 * Custom joke item: create a new layout `joke_layout.xml` as a single `TextView`. Add some android tag to improve UI as much as you wish(thinks about `textSize`, `textAlignment`, `padding`, `background`, ...).
 
-> :mag: ***cmd+n** in layout folder to create a new Layout res file.*
->
-> :mag: *TextView [doc][TextView].*
+    > :mag: ***cmd+n** in layout folder to create a new Layout res file.*
+    >
+    > :mag: *TextView [doc][TextView].*
 
 * Custom joke usage: Remember in your `JokeAdapter` when its `ViewHolder` is created? Replace the `TextView` instance with your `joke_layout`. You need a `LayoutInflater` to inflate your view. 
 
-> :mag: *LayoutInflater [doc][LayoutInflater].* 
+    > :mag: *LayoutInflater [doc][LayoutInflater].* 
 
 
 #### 5. Conclusion
@@ -142,17 +142,17 @@ First of all, this json file needs to be changed into kotlin class so that we ca
 
 * Once you're done with imports, create a class `Joke` matching json format and tag it as `Serializable`. 
 
-> :mag: *Is `Joke` as simple class ?*
+    > :mag: *Is `Joke` as simple class ?*
 
 * `created_at`, `icon_url`, and `updated_at` don't match the Kotlin **camel case** convention. We would prefer those val to be named `createdAt`, `iconUrl`, and `updatedAt`. Use `@SerialName` annotation to achieve this.
 
-> :mag: *Kotlinx Serialization [annotations][kotlinSerialAnnotation]*
+    > :mag: *Kotlinx Serialization [annotations][kotlinSerialAnnotation]*
 
 * Use [`JokeSerializationTest.kt`][testFile] to be sure everything is correct. You can download file and past it in `test` folder (same level that `main`). Note that you shouldn't edit this file content, just *Run Test*.
 
 * Replace all `String` used in previous part with `Joke` object: `JokeAdapter` should not contain a `List<String>` anymore but a `List<Joke>`. 
 
-> :mag: *Think about `Extension fun` and `map` operator to avoid changing your hardcoded list of string-jokes.* 
+    > :mag: *Think about `Extension fun` and `map` operator to avoid changing your hardcoded list of string-jokes.* 
 
 * Run the app.
  
@@ -170,7 +170,7 @@ First of all, this json file needs to be changed into kotlin class so that we ca
 
 * We are going to use internet in our app. Specify in the Manifest that the app needs `android.permission.INTERNET`. 
 
-> :mag: *The manifest tag to use is `<uses-permission/>`*
+    > :mag: *The manifest tag to use is `<uses-permission/>`*
 
 
 #### 3. Retrofit usage
@@ -181,7 +181,7 @@ First of all, this json file needs to be changed into kotlin class so that we ca
 
 * This interface should declare a fun `giveMeAJoke()` which returns a `Single<Joke>`.
 
-> :mag: *[Single][RxSingle] is an Observable variant in Rx. It always emits one value or an error*
+    > :mag: *[Single][RxSingle] is an Observable variant in Rx. It always emits one value or an error*
 
 * To tell Retrofit this fun is an http GET, just add the annotation `@GET("url_path_extension")` to your function.
 
@@ -196,14 +196,14 @@ Retrofit will help you creating an instance of `JokeApiService`. To do so we nee
     * add a converter factory - `Json.asConverterFactory(MediaType.get("application/json"))`
     * add a call adapter factory - Create a RxJava2CallAdapterFactory
     
-> :mag: *Builder is a common Java instance maker pattern. Most of the time it works as follow:*
->```kotlin
->val builder = Builder()
->   .setSomething()
->   .addSomething()
->   .addSomething()
->   .build()
->```
+    > :mag: *Builder is a common Java instance maker pattern. Most of the time it works as follow:*
+    >```kotlin
+    >val builder = Builder()
+    >   .setSomething()
+    >   .addSomething()
+    >   .addSomething()
+    >   .build()
+    >```
 
 * Tell your builder to create a `JokeApiService` instance. Make your function return this instance. 
  
@@ -215,32 +215,32 @@ Now that we laid the foundations, let's play with it.
 
 * Now we want to get the result of this call. We need to observe this `Single` and decide what to do when we have the event. To do so, use the kotlin `subscribeBy()` function. 
 
-> :mag: *You can give 2 lambda arguments to `subscribeBy`. See following javadoc:*
->```kotlin
->fun <T : Any> Single<T>.subscribeBy(
->        onError: (Throwable) -> Unit = onErrorStub,
->        onSuccess: (T) -> Unit = onNextStub
->        ): Disposable
->```
-
-> :mag: *Lambda argument example : `onSuccess = { joke -> TODO("Tell your $joke to the world") }`*
+    > :mag: *You can give 2 lambda arguments to `subscribeBy`. See following javadoc:*
+    >```kotlin
+    >fun <T : Any> Single<T>.subscribeBy(
+    >        onError: (Throwable) -> Unit = onErrorStub,
+    >        onSuccess: (T) -> Unit = onNextStub
+    >        ): Disposable
+    >```
+    >
+    > :mag: *Lambda argument example : `onSuccess = { joke -> TODO("Tell your $joke to the world") }`*
 
 * If you test your code at this step you'll get a `NetworkOnMainThreadException`. Web call are asynchronous and require not to be executed on the **MainThread**. What you need to do is to force the subscription of your Single on a different Thread. Android most common thread to execute network call is `Schedulers.io()`. 
 
-> :mag: *Have a look at method `Single.subscribeOn(...)`*  
+    > :mag: *Have a look at method `Single.subscribeOn(...)`*  
 
 * You are now ready to Log your first Joke in Logcat. Run the app and read your joke.
 
-> :warning: Retrofit2 requires at minimum Java 8+. For some reasons your code might crash with [`NoSuchMethodError: No static method metafactory`][RetrofitError]. You can fix it by switching Java8 compatibility, add following code to your Gradle :
->```groovy
-> android {
->    ...
->    compileOptions {
->        sourceCompatibility JavaVersion.VERSION_1_8
->        targetCompatibility JavaVersion.VERSION_1_8
->    }
->}
->```
+    > :warning: Retrofit2 requires at minimum Java 8+. For some reasons your code might crash with [`NoSuchMethodError: No static method metafactory`][RetrofitError]. You can fix it by switching Java8 compatibility, add following code to your Gradle :
+    >```groovy
+    > android {
+    >    ...
+    >    compileOptions {
+    >        sourceCompatibility JavaVersion.VERSION_1_8
+    >        targetCompatibility JavaVersion.VERSION_1_8
+    >    }
+    >}
+    >```
 
 #### 5. Leaks killer
 At this point we subscribed to a `Single` observable, but we do never unsubscribe to it, which is a bad thing because it creates leaks. Android Studio should be warning: *"The result of subscribeBy is not used"*.
@@ -268,9 +268,9 @@ Goal now: add a `Joke` we get from the web inside our `RecyclerView`.
 
 * If you run your code at this step you'll get a `CalledFromWrongThreadException`. It means that you're asking Android to update Views on a different Thread that the **MainThread**, which is not allowed. What you need to do is to force the observation of your `Single` observable on `AndroidSchedulers.mainThread()`.
 
-> :mag: *Have a look at method `Single.observeOn(...)`*
-
-> :mag: *If you're curious to learn more about subscribeOn & observeOn methods, [here][threadingArticle] is a very helpful article.*
+    > :mag: *Have a look at method `Single.observeOn(...)`*
+    >
+    > :mag: *If you're curious to learn more about subscribeOn & observeOn methods, [here][threadingArticle] is a very helpful article.*
 
 * Add a button on your screen and make it add a new `Joke` to your list on each click.  
 
@@ -279,15 +279,15 @@ What we need now is to tell the user he needs to wait while his Joke is being do
 
 * Add a `ProgressBar` to your layout. By default you want this loader not to be visible on screen. 
 
-> :mag: *Manage a `View` visibility using tag [`visibility`][viewVisibility]*
+    > :mag: *Manage a `View` visibility using tag [`visibility`][viewVisibility]*
 
 * Make your loader visible whenever a joke is fetched and during the all task duration.  
 
-> :mag: *I guess you want to:* 
-> * *show loader when subscribing to your `Observable`.*
-> * *hide it after your `Observable` is terminated.*
-
-> :mag: *The call to random joke API will probably be very quick for a single Joke, and the loader may not have time to appear on screen. Take a look at method `Observable.delay()`, It could be helpful for testing.* 
+    > :mag: *I guess you want to:* 
+    > * *show loader when subscribing to your `Observable`.*
+    > * *hide it after your `Observable` is terminated.*
+    >
+    > :mag: *The call to random joke API will probably be very quick for a single Joke, and the loader may not have time to appear on screen. Take a look at method `Observable.delay()`, It could be helpful for testing.* 
 
 * *Optional*: You can customise your loader UI as you prefer.
 
@@ -296,9 +296,9 @@ Of course we won't get stuck here with a stupid single joke. Don't you want some
 
 * Change your `Single` emission of `Joke` into an `Observable` which emits a set of 10 `Jokes` one after the other. 
 
-> :mag: *What you would like to do here is to **`repeat`** n times the single emission of a `Joke`* 
-
-> :mag: *Remember a `Single` is a particular case of an `Observable`. It emits result in `onSuccess` whereas an `Observable` emits each result in `onNext`, then `onComplete` when it's done.*
+    > :mag: *What you would like to do here is to **`repeat`** n times the single emission of a `Joke`* 
+    >
+    > :mag: *Remember a `Single` is a particular case of an `Observable`. It emits result in `onSuccess` whereas an `Observable` emits each result in `onNext`, then `onComplete` when it's done.*
 
 
 #### 4. Reload new jokes 
@@ -311,7 +311,7 @@ The goal here is to dynamically reload new jokes when we are done with previous 
     * passed as param in the adapter constructor
     * a lambda function
     
-> :mag: *Have a look at kotlin [function types documentation][kotlinFunctionTypeDoc] to learn more about how to pass function as param. For further reading, [here][kotlinFunctionArticle] is a well written article on Kotlin functions features.*
+    > :mag: *Have a look at kotlin [function types documentation][kotlinFunctionTypeDoc] to learn more about how to pass function as param. For further reading, [here][kotlinFunctionArticle] is a well written article on Kotlin functions features.*
 
 * Make your Activity code compile : complete your Adapter instantiation with missing param. What do you want to do on your list bottom reached ? 
 
@@ -333,9 +333,9 @@ If you try to turn your device to landscape, you'll see that your app is reloadi
 
 * Use methods `onSavedInstanceState()` and `onCreate()` to save and restore your list of jokes. Your list needs to be serialized and saved as `String` in `Bundle`.
 
-> :mag: Brief remember about Activity life cycle [`onCreate()`][lifeCycleOnCreate].
-
-> :mag: You can serialize a `List<Obj>` using a `SerializationStrategy<Obj>` -> `Obj.serializer().list`.
+    > :mag: Brief remember about Activity life cycle [`onCreate()`][lifeCycleOnCreate].
+    >
+    > :mag: You can serialize a `List<Obj>` using a `SerializationStrategy<Obj>` -> `Obj.serializer().list`.
 
 * Take care not to reload new jokes if you restore previously saved list.
 
@@ -386,8 +386,6 @@ WIP _ TODO :
 - when starting app, add saved joke to list then load other jokes
 
 #### 1. Share a selected joke
-
-TODO : Fix indentation for all *mag*
 
 
 <p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
