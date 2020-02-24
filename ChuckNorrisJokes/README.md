@@ -288,6 +288,8 @@ What we need now is to tell the user he needs to wait while his Joke is being do
 
 > :mag: *The call to random joke API will probably be very quick for a single Joke, and the loader may not have time to appear on screen. Take a look at method `Observable.delay()`, It could be helpful for testing.* 
 
+* *Optional*: You can customise your loader UI as you prefer.
+
 #### 3. Make the call for multiple jokes with Observable
 Of course we won't get stuck here with a stupid single joke. Don't you want some more funny stories ? 
 
