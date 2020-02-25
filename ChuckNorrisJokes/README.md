@@ -375,17 +375,24 @@ We will need to interact with our joke View items. That's why we need a custom v
     > :mag: *You can download and add [`JokeTouchHelper.kt`][JokeTouchHelper] to your project. Of course, this file needs to be completed... :innocent:* 
 
 
-#### 1. Save favorite jokes
+#### 3. Share jokes - WIP :hammer:
+
+* When clicking on share button, use `Intent` to share your joke.
+
+    > :mag: *Have a look at method `Intent.createChooser(...)`*
 
 
-WIP _ TODO 
-Lesson demo live --> create a custom view
+#### 4. Save jokes - WIP :hammer:
 
-WIP _ TODO :
-- Save selected joke in shared prefs
-- when starting app, add saved joke to list then load other jokes
+* When clicking on start button, save corresponding Joke using *shared preferences*. Make sure star icon state is always correct.
 
-#### 1. Share a selected joke
+* When starting app, add saved jokes to list then load other jokes.
+
+
+#### 5. Conclusion - WIP :hammer:
+
+> Here will stand a fantastic GIF animation of the result app :kissing_smiling_eyes: 
+
 
 
 <p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
