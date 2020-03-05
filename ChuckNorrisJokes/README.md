@@ -405,13 +405,11 @@ Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLay
    > :mag: *`swiperefreshlayout` lib should be imported the same way that `recyclerview`. Package path: `androidx.swiperefreshlayout.widget`*
 
 
-#### 6. Conclusion - WIP :hammer:
+#### 6. Conclusion
 
-> Here will stand a fantastic GIF animation of the result app :kissing_smiling_eyes: 
+<p align="center"><img src="images/demo.gif" height="500"><p/>
 
-
-
-<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
+:clap: :clap: BRAVO :clap: :clap: 
 
 
 
