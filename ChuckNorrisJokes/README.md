@@ -386,10 +386,23 @@ We will need to interact with our joke View items. That's why we need a custom v
 
 * When clicking on start button, save corresponding Joke using *shared preferences*. Make sure star icon state is always correct.
 
+
 * When starting app, add saved jokes to list then load other jokes.
 
 
-#### 5. Conclusion - WIP :hammer:
+#### 5. Pull to refresh
+
+Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLayout`][SwipeRefreshLayout].
+
+* Swipe-to-refresh should be visible when loading jokes from api. 
+    
+* Swipe-to-refresh loader should replace your previous loader.
+
+* Swipe-to-refresh loader should be customized (color, size, etc.)
+
+   > :mag: *`swiperefreshlayout` lib should be imported the same way that `recyclerview`. Package path: `androidx.swiperefreshlayout.widget`*
+    
+#### 6. Conclusion - WIP :hammer:
 
 > Here will stand a fantastic GIF animation of the result app :kissing_smiling_eyes: 
 
@@ -432,3 +445,4 @@ We will need to interact with our joke View items. That's why we need a custom v
 [ItemTouchHelper]: https://developer.android.com/reference/androidx/recyclerview/widget/ItemTouchHelper?hl=en
 [SharedPref]: https://developer.android.com/reference/android/content/SharedPreferences
 [JokeTouchHelper]: JokeTouchHelper.kt
+[SwipeRefreshLayout]: https://developer.android.com/reference/androidx/swiperefreshlayout/widget/SwipeRefreshLayout
