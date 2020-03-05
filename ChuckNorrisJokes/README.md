@@ -375,19 +375,21 @@ We will need to interact with our joke View items. That's why we need a custom v
     > :mag: *You can download and add [`JokeTouchHelper.kt`][JokeTouchHelper] to your project. Of course, this file needs to be completed... :innocent:* 
 
 
-#### 3. Share jokes - WIP :hammer:
+#### 3. Share jokes
 
 * When clicking on share button, use `Intent` to share your joke.
 
     > :mag: *Have a look at method `Intent.createChooser(...)`*
 
 
-#### 4. Save jokes - WIP :hammer:
+#### 4. Save jokes
+In this part we'll use [`SharedPreferences`][SharedPreferences].
 
-* When clicking on start button, save corresponding Joke using *shared preferences*. Make sure star icon state is always correct.
+* When clicking on :star: button, save associated Joke. Make sure star icon state is always correct.
 
+* Take care to "unsave" (remove from shared prefs) the joke when :star: button state pass from "on" to "off".
 
-* When starting app, add saved jokes to list then load other jokes.
+* When starting app, saved jokes should be displayed first in the list.
 
 
 #### 5. Pull to refresh
@@ -401,7 +403,8 @@ Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLay
 * Swipe-to-refresh loader should be customized (color, size, etc.)
 
    > :mag: *`swiperefreshlayout` lib should be imported the same way that `recyclerview`. Package path: `androidx.swiperefreshlayout.widget`*
-    
+
+
 #### 6. Conclusion - WIP :hammer:
 
 > Here will stand a fantastic GIF animation of the result app :kissing_smiling_eyes: 
@@ -445,4 +448,5 @@ Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLay
 [ItemTouchHelper]: https://developer.android.com/reference/androidx/recyclerview/widget/ItemTouchHelper?hl=en
 [SharedPref]: https://developer.android.com/reference/android/content/SharedPreferences
 [JokeTouchHelper]: JokeTouchHelper.kt
+[SharedPreferences]: https://developer.android.com/reference/android/content/SharedPreferences
 [SwipeRefreshLayout]: https://developer.android.com/reference/androidx/swiperefreshlayout/widget/SwipeRefreshLayout
