@@ -20,6 +20,7 @@ Author [Nicolas Duponchel](NDU) [@][NDU_mail]
 
 * [:hammer:][Training1] Build your first app
 * [:hammer:][Training2] Have fun with Chuck Norris
+* [:muscle:][Training3] Clean archi using MVVM
 
 
 
@@ -37,6 +38,7 @@ Author [Nicolas Duponchel](NDU) [@][NDU_mail]
 [//]: # (Training links)
 [Training1]: MyFirstApp
 [Training2]: ChuckNorrisJokes
+[Training3]: ChuckNorrisMVVM
 
 [NDU]: https://www.linkedin.com/in/nicolasduponchel/
 [NDU_mail]: mailto:nduponchel@gopro.com
