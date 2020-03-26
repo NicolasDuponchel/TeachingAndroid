@@ -13,11 +13,13 @@ Goal is to clean up our app architecture. To do so, we'll migrate Chuck Norris a
 2. [ViewModel pattern](#part3)
 
 ## Part 1 - Clean JokeView <a name="part1"/>
-`JokeView` single responsibility is to display values from its `JokeView.Model`, that's all. One and **only** one public method should be able to update this `JokeView.Model` --> `setupView(model: Model)`. Finally, `JokeView` itself should not be able to change neither its own `Model`, neither its view params. The view should change only when `setupView(model)` is called. 
+`JokeView` single responsibility is to display values from its `JokeView.Model`, that's all. One and **only** one public method should be able to update this `JokeView.Model` --> `setupView(model: Model)`. Finally, `JokeView` itself should not be able to change neither its own `Model`, neither its dynamic view states. The view should change only when `setupView(model)` is called.
 
-> :mag: *In clean archi, we often say that `View` is stupid and acts like a model-mirror.*
+> :mag: *In clean archi, we often say that `View` is stupid and acts like a model-mirror. It shouldn't decide anything.*
 >
-> :mag: *Note that `JokeView`'s callbacks (lambda methods) are also passed through `JokeView.Model`*
+> :mag: *What about buttons? The View itself should not decide what to pass in `btn.setOnClickListener{..}`. `JokeView`'s callbacks (lambda methods) are also passed through `JokeView.Model` and decided somewhere else (in the Activity for the moment).*
+>
+> :mag: *What about favorite joke? Clicking on star button should propagate an event to the Activity (for the moment), Activity should update the data set, then tell `JokeAdapter` something has changed, then `JokeView.setupView(newModelWithFavoriteJoke)` would be called.*
 
 <p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="100"><p/>
 
