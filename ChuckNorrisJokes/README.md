@@ -140,6 +140,8 @@ First of all, this json file needs to be changed into kotlin class so that we ca
 
 * Import `Kotlinx.serialization` lib into your app. You will need to import both [plugin][kotlinSerialPlugin] and [runtime library][kotlinSerialLib]. Prefer usage of groovy DSL for now.
 
+    > :warning: *Read carrefully [the doc about version compatibilities][kotxSerialDocVersion]. Using kotlinx serialization `0.20.0` requires kotlin `1.3.70`.*
+
 * Once you're done with imports, create a class `Joke` matching json format and tag it as `Serializable`. 
 
     > :mag: *Is `Joke` as simple class ?*
@@ -432,6 +434,7 @@ Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLay
 [kotlinSerialPlugin]: https://github.com/Kotlin/kotlinx.serialization#using-apply-plugin-the-old-way
 [kotlinSerialLib]: https://github.com/Kotlin/kotlinx.serialization#dependency-on-the-runtime-library
 [kotlinSerialAnnotation]: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/examples.md#annotations
+[kotxSerialDocVersion]: https://github.com/Kotlin/kotlinx.serialization#incompatible-changes
 [reactiveX]: http://reactivex.io/
 [RxAdapter]: https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2
 [RxConverter]: https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
