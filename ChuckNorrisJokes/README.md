@@ -167,8 +167,10 @@ First of all, this json file needs to be changed into kotlin class so that we ca
 * Import `RxJava2` last version for `rxkotlin` and `rxandroid` - `io.reactivex.rxjava2:rx....:x.y.z`.
 
     > :warning: A third version of RxJava is now available and introduce massive API changes. Prefer using RxJava2:
-            "io.reactivex.rxjava2:rxkotlin:2.3.0"
-            "io.reactivex.rxjava2:rxandroid:2.1.0" 
+    >
+    > "io.reactivex.rxjava2:rxkotlin:2.3.0"
+    >
+    > "io.reactivex.rxjava2:rxandroid:2.1.0"
 
 * To make Rx works with Retrofit, an adapter may be used. Thanks to Jake Wharton's [Adapter][RxAdapter], we won't need to build it. Import the adapter.
 
