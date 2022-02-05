@@ -144,7 +144,7 @@ First of all, this json file needs to be changed into kotlin class so that we ca
 
 * Once you're done with imports, create a class `Joke` matching json format and tag it as `Serializable`. 
 
-    > :mag: *Is `Joke` as simple class ?*
+    > :mag: *Is `Joke` a simple class ?*
 
 * `created_at`, `icon_url`, and `updated_at` don't match the Kotlin **camel case** convention. We would prefer those val to be named `createdAt`, `iconUrl`, and `updatedAt`. Use `@SerialName` annotation to achieve this.
 

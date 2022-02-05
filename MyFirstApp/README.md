@@ -52,7 +52,7 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 * Add dimensions to match parent width and match image content height (see [wrap_content & match_parent](https://developer.android.com/reference/android/view/ViewGroup.LayoutParams#xml-attributes_1))
 * Add constraints to place it on bottom of screen (follow TextView's example)
 * Download [ESIEE logo](https://www.esiee.fr/sites/all/themes/custom/esiee_theme/logo.png) and rename it to `esiee_logo.png`
-* Copy you logo to `app/src/main/res/drawable` 
+* Copy your logo to `app/src/main/res/drawable` 
 * Run the app 
 
 ***TIP 1***: Add an image source in ImageView with `android:src="@drawable/your_image_source`
