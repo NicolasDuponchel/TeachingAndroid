@@ -45,7 +45,7 @@ B.  Create a list of jokes
 ```
 
 
-<p align="center"><img src="https://i.stack.imgur.com/twIm6.png" height="200"><p/>
+<p align="center"><a href="https://api.chucknorris.io/"><img src="https://i.stack.imgur.com/twIm6.png" height="200"></a><p/>
 
 
 ## Part 1 - Create a UI List component <a name="part1"/>
