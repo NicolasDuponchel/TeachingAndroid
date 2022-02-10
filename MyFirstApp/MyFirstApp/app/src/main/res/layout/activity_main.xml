@@ -38,5 +38,16 @@
         android:text="@string/try_me_button"
         />
 
+    <TextView
+        android:id="@+id/tv_names"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="name1, name2, name3, name4, name5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_try_me"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
