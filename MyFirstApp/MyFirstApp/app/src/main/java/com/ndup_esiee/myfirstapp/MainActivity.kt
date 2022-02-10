@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        logLifeCycle("onCreate")
+
         val names = listOf("Nico", "Pierre", "Paul", "Jacques", "Alex")
             .sortedBy { it.count() }
             .also { names ->
@@ -22,5 +24,35 @@ class MainActivity : AppCompatActivity() {
             }
 
         btn_try_me.setOnClickListener { tv_title.text = names.random() }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        logLifeCycle("onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        logLifeCycle("onResume")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        logLifeCycle("onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        logLifeCycle("onDestroy")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        logLifeCycle("onPause")
+    }
+
+    private fun logLifeCycle(tag: String) {
+        Log.d("LifeCycleEvent", tag)
+        tv_lifeCycle.text = "${tv_lifeCycle.text}$tag -> "
     }
 }
