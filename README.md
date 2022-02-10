@@ -1,26 +1,27 @@
 # Teaching Android
 
-Author [Nicolas Duponchel](NDU) [@][NDU_mail]
+Author [Nicolas Duponchel][NDU]
+[@:mail][NDU_mail]
 
 ## Lessons
 
-* [:books:][Lesson1] Android introduction
-* [:books:][Lesson2] Kotlin lesson
-* [:books:][Lesson3] Git lesson
-* [:books:][Lesson4] Android lesson
+* :books: [Android introduction][Lesson1]
+* :books: [Kotlin lesson][Lesson2] 
+* :books: [Git lesson][Lesson3]
+* :books: [Android lesson][Lesson4]
 
 
 ## Useful links
 
-* [:book:][Useful1] Android developer
-* [:book:][Useful2] Git official Doc
+* :book: [Android developer][Useful1]
+* :book: [Git official Doc][Useful2]
 
 
 ## Training
 
-* [:hammer:][Training1] Build your first app
-* [:hammer:][Training2] Have fun with Chuck Norris
-* [:muscle:][Training3] Clean archi using MVVM
+* :hammer: [Build your first app][Training1]
+* :hammer: [Have fun with Chuck Norris][Training2]
+* :muscle: [Clean archi using MVVM][Training3]
 
 
 
@@ -41,4 +42,4 @@ Author [Nicolas Duponchel](NDU) [@][NDU_mail]
 [Training3]: ChuckNorrisMVVM
 
 [NDU]: https://www.linkedin.com/in/nicolasduponchel/
-[NDU_mail]: mailto:nduponchel@gopro.com
+[NDU_mail]: mailto:nicolas.duponchel@esiee.fr
