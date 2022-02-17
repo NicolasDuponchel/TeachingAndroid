@@ -74,11 +74,13 @@ Is **"Hello world!"** prompted on the screen ? Well you can keep on reading.
 Make your button add a `'E'` at the end of "Hello ESIEE" : 
 
 * Add an id to your button in `activity_main.xml` 
-* Import your ids in the acitivity with `import kotlinx.android.synthetic.main.activity_main.*`
+* Import your ids in the activity with `import kotlinx.android.synthetic.main.activity_main.*`. (See tips to make that import work)
 * Call `setOnClickListener { TODO("Add 'E' at the end of "Hello ESIEE") }` on the btn id in the activity
 * Run app
 
-***TIP***: Add an id with `android:id="@+id/my_item_id"` 
+***TIP 1***: Make sure your app/build.gradle contains kotlin extensions plugin : `id 'kotlin-android-extensions'`
+
+***TIP 2***: Add an id with `android:id="@+id/my_item_id"` 
  
 
 ### 5- Move button
