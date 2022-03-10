@@ -138,17 +138,13 @@ Here is the returned json :
 First of all, this json file needs to be changed into kotlin class so that we can use it in the app. [Kotlinx Serilaization][kotlinSerial] will help us achieve this *conversion*. 
 
 
-* Import `Kotlinx.serialization` lib into your app. You will need to import both [plugin][kotlinSerialPlugin] and [runtime library][kotlinSerialLib]. Prefer usage of groovy DSL for now.
-
-    > :warning: *Read carrefully [the doc about version compatibilities][kotxSerialDocVersion]. Using kotlinx serialization `0.20.0` requires kotlin `1.3.70`.*
+* Import `Kotlinx.serialization` lib into your app with [last version][kotlinSerialVersion]. You will also need to import [kotlin serial plugin][kotlinSerialPlugin]. Prefer usage of groovy DSL for now.
 
 * Once you're done with imports, create a class `Joke` matching json format and tag it as `Serializable`. 
 
     > :mag: *Is `Joke` a simple class ?*
 
-* `created_at`, `icon_url`, and `updated_at` don't match the Kotlin **camel case** convention. We would prefer those val to be named `createdAt`, `iconUrl`, and `updatedAt`. Use `@SerialName` annotation to achieve this.
-
-    > :mag: *Kotlinx Serialization [annotations][kotlinSerialAnnotation]*
+* `created_at`, `icon_url`, and `updated_at` don't match the Kotlin **[camel case][camelCase]** convention. We would prefer those val to be named `createdAt`, `iconUrl`, and `updatedAt`. Use [`@SerialName`][kotlinSerialAnnotation] annotation to achieve this.
 
 * Use [`JokeSerializationTest.kt`][testFile] to be sure everything is correct. You can download file and past it in `test` folder (same level that `main`). Note that you shouldn't edit this file content, just *Run Test*.
 
@@ -434,10 +430,9 @@ Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLay
 [recyclerViewVersion]: https://developer.android.com/jetpack/androidx/releases/recyclerview
 [implementation]: https://developer.android.com/studio/build/dependencies#dependency_configurations
 [kotlinSerial]: https://github.com/Kotlin/kotlinx.serialization
+[kotlinSerialVersion]: https://github.com/Kotlin/kotlinx.serialization#dependency-on-the-json-library
 [kotlinSerialPlugin]: https://github.com/Kotlin/kotlinx.serialization#using-apply-plugin-the-old-way
-[kotlinSerialLib]: https://github.com/Kotlin/kotlinx.serialization#dependency-on-the-runtime-library
-[kotlinSerialAnnotation]: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/examples.md#annotations
-[kotxSerialDocVersion]: https://github.com/Kotlin/kotlinx.serialization#incompatible-changes
+[kotlinSerialAnnotation]: https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/basic-serialization.md#serial-field-names
 [reactiveX]: http://reactivex.io/
 [RxAdapter]: https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2
 [RxConverter]: https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
@@ -458,3 +453,4 @@ Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLay
 [JokeTouchHelper]: JokeTouchHelper.kt
 [SharedPreferences]: https://developer.android.com/reference/android/content/SharedPreferences
 [SwipeRefreshLayout]: https://developer.android.com/reference/androidx/swiperefreshlayout/widget/SwipeRefreshLayout
+[camelCase]: https://fr.wikipedia.org/wiki/Camel_case
