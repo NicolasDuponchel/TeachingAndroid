@@ -61,7 +61,7 @@ Let's use an hardcoded source of data for the first part of the work.
 
 
 #### 2. RecyclerView instantiation
-A `RecyclerView` is an optimized and flexible view for providing a limited window into a large data set. 
+A `RecyclerView` is an optimized and flexible view for providing a limited window into a large data set. For more info about how to implement a `RecyclerView`, have a deap read at [this android guide][RecyclerViewAndroidGuide].
 
 * Add `androidx.recyclerview:recyclerview` to your dependencies in module file `build.gradle (app)` to import `RecyclerView` package.
 
@@ -428,6 +428,7 @@ Add a **Swipe-to-Refresh** behavior to your app. You can use a [`SwipeRefreshLay
 [testFile]: JokeSerializationTest.kt
 [chuckApi]: https://api.chucknorris.io/
 [RecyclerView]: https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView
+[RecyclerViewAndroidGuide]: https://developer.android.com/guide/topics/ui/layout/recyclerview
 [TextView]: https://developer.android.com/reference/kotlin/android/widget/TextView
 [LayoutInflater]: https://developer.android.com/reference/android/view/LayoutInflater
 [recyclerViewVersion]: https://developer.android.com/jetpack/androidx/releases/recyclerview
