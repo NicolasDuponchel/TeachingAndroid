@@ -1,7 +1,7 @@
 package com.gopro.chucknorrisjokes
 
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
+import kotlinx.serialization.*
 import org.junit.Assert
 import org.junit.Test
 
@@ -25,14 +25,13 @@ class JokeSerializationTest {
 
     @Test
     fun `serialization is correct`() {
-        val json = Json(JsonConfiguration.Stable).stringify(Joke.serializer(), baseJoke)
+        val json = Json.encodeToString(baseJoke)
         Assert.assertEquals(baseJson, json)
-
     }
 
     @Test
     fun `deserialization is correct`() {
-        val joke = Json(JsonConfiguration.Stable).parse(Joke.serializer(), baseJson)
+        val joke: Joke = Json.decodeFromString(baseJson)
         Assert.assertEquals(baseJoke, joke)
     }
 }
