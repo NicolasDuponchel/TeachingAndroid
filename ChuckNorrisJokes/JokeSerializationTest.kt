@@ -34,4 +34,10 @@ class JokeSerializationTest {
         val joke: Joke = Json.decodeFromString(baseJson)
         Assert.assertEquals(baseJoke, joke)
     }
+    
+    companion object {
+        private val Json = Json {
+            encodeDefaults = true
+        }
+    }
 }
