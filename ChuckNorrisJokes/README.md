@@ -335,13 +335,13 @@ This part is the last one we need before telling our app is ready to be used. Go
 #### 1. Manage screen rotation
 If you try to turn your device to landscape, you'll see that your app is reloading new jokes. This is due to Android Activity life cycle which destroys and rebuilds the View. We need to [save and restore UI states][SavingUiStates], it can be achieved different ways.
 
-* Use methods `onSavedInstanceState()` and `onCreate()` to save and restore your list of jokes. Your list needs to be serialized and saved as `String` in `Bundle`.
+* Use method `onSavedInstanceState()` to save your list of jokes. Then you can use `onRestoreInstanceState()` to restore it. Your list needs to be serialized and saved as `String` in `Bundle`.
+
+    > :mag: You can serialize a `List<Joke>` the same way you serialize a `Joke`. Check out the example in `JokeSerializationTest.kt`.
+
+* Take care not to reload new jokes if you restore previously saved list. You'll need to check `savedInstanceState: Bundle?` param in method `onCreate()`
 
     > :mag: Brief remember about Activity life cycle [`onCreate()`][lifeCycleOnCreate].
-    >
-    > :mag: You can serialize a `List<Obj>` using a `SerializationStrategy<Obj>` -> `Obj.serializer().list`.
-
-* Take care not to reload new jokes if you restore previously saved list.
 
 
 #### 2. Custom Joke View 
